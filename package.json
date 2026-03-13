@@ -58,7 +58,7 @@
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "@types/react-helmet": "^6.1.11",
-    "@umijs/lint": "^4.6.13",
+    "@umijs/lint": "^4.6.33",
     "@umijs/max": "^4.6.25",
     "cross-env": "^10.1.0",
     "express": "^5.2.0",
