@@ -9,7 +9,6 @@ import {
   ProCard,
   StatisticCard,
 } from '@ant-design/pro-components';
-import { request } from '@umijs/max';
 import {
   Badge,
   Button,
@@ -45,6 +44,12 @@ type Summary = {
   deploy: number;
 };
 
+type ProjectsResponse = {
+  success: boolean;
+  data: ProjectItem[];
+  summary: Summary;
+};
+
 const statusColorMap: Record<string, string> = {
   active: 'processing',
   live: 'success',
@@ -67,6 +72,14 @@ const emptySummary: Summary = {
   deploy: 0,
 };
 
+async function getJson<T>(url: string): Promise<T> {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error(`Request failed: ${url} (${res.status})`);
+  }
+  return res.json();
+}
+
 const ProjectCommandCenter: React.FC = () => {
   const [keyword, setKeyword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -76,20 +89,16 @@ const ProjectCommandCenter: React.FC = () => {
   const loadProjects = async () => {
     setLoading(true);
     try {
-      let res: {
-        success: boolean;
-        data: ProjectItem[];
-        summary: Summary;
-      } | null = null;
+      let res: ProjectsResponse | null = null;
       try {
-        res = await request('/api/projects');
+        res = await getJson<ProjectsResponse>('/api/projects');
       } catch {
         const base = window.location.pathname.startsWith(
           '/project-command-center',
         )
           ? '/project-command-center/'
           : '/';
-        res = await request(`${base}projects.json`);
+        res = await getJson<ProjectsResponse>(`${base}projects.json`);
       }
       setProjects(res?.data || []);
       setSummary(res?.summary || emptySummary);
