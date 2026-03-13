@@ -135,7 +135,7 @@ const ProjectCommandCenter: React.FC = () => {
         >
           Refresh
         </Button>,
-        <Button key="new" type="primary">
+        <Button key="new" type="primary" disabled>
           New Project
         </Button>,
       ]}
