@@ -11,19 +11,25 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/ai-interview-assistant",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-04T13:08:06Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "anime-character-analyzer",
                      "status":  "active",
                      "category":  "AI Tool",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/anime-character-analyzer",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-04T13:09:47Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_PcDn5Wc3zjM2DKoxpe4mVJIb9GUc"
                  },
                  {
                      "name":  "automation",
@@ -35,7 +41,10 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/automation",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-04T13:10:53Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "awesome-openclaw-skills",
@@ -47,19 +56,25 @@
                      "githubUrl":  null,
                      "stars":  0,
                      "visibility":  null,
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  null,
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "business-card-manager",
                      "status":  "active",
                      "category":  "Business Tool",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/business-card-manager",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T11:18:18Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_YZI5YmbydGWk5AS1r3rD1aJNhuyf"
                  },
                  {
                      "name":  "ebook-to-audiobook",
@@ -71,7 +86,10 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/ebook-to-audiobook",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  "https://openclawsean024-create.github.io/ebook-to-audiobook/"
+                     "githubUpdatedAt":  "2026-03-09T15:55:05Z",
+                     "pagesUrl":  "https://openclawsean024-create.github.io/ebook-to-audiobook/",
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_zpW21YZCbv5aeLO9Pn09hTRNzfHZ"
                  },
                  {
                      "name":  "ergonomic-presentation",
@@ -83,67 +101,85 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/ergonomic-presentation",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-04T13:15:27Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "facebook-comment-picker",
                      "status":  "active",
                      "category":  "Project",
                      "github":  false,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "從本地 projects 目錄即時讀取",
                      "githubUrl":  null,
                      "stars":  0,
                      "visibility":  null,
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  null,
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_fsQojYAAcxoWaJG5PaPSJpgkZubM"
                  },
                  {
                      "name":  "marathon-pace-bracelet",
                      "status":  "active",
                      "category":  "Project",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/marathon-pace-bracelet",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-09T09:56:31Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_IZGiHcWkFLD11HjuIrbkxvJ5Dskv"
                  },
                  {
                      "name":  "market-research-tool",
                      "status":  "active",
                      "category":  "Research",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/market-research-tool",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T11:18:45Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_BpRkFUbwKVCM3hhSgHSXLWJsJ1va"
                  },
                  {
                      "name":  "meeting-recorder",
                      "status":  "active",
                      "category":  "Project",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/meeting-recorder",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T11:18:27Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_O64Lzs0QX2rW0lBMuiBGz91hib8i"
                  },
                  {
                      "name":  "openclaw-news-collector",
                      "status":  "active",
                      "category":  "Collector",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/openclaw-news-collector",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T14:48:25Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_EA10OniluKJhtypPQQCUXZ01tQrP"
                  },
                  {
                      "name":  "openclaw-presentation",
@@ -155,31 +191,40 @@
                      "githubUrl":  null,
                      "stars":  0,
                      "visibility":  null,
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  null,
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "presentation-generator",
                      "status":  "active",
                      "category":  "Project",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/presentation-generator",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T11:18:55Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_xd8Fbii2hkqHlSyetgm5wdEAw7ec"
                  },
                  {
                      "name":  "project-dashboard",
                      "status":  "active",
                      "category":  "Dashboard",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/project-dashboard",
                      "stars":  0,
                      "visibility":  "private",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-10T10:59:40Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_bMM7xSD5HEi5rITUWmqMewmq6s3z"
                  },
                  {
                      "name":  "project-token-monitor",
@@ -191,7 +236,10 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/project-token-monitor",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  "https://openclawsean024-create.github.io/project-token-monitor/"
+                     "githubUpdatedAt":  "2026-03-07T10:49:43Z",
+                     "pagesUrl":  "https://openclawsean024-create.github.io/project-token-monitor/",
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "ptt-tracker",
@@ -203,19 +251,25 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/ptt-tracker",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-04T17:36:16Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "report-form",
                      "status":  "active",
                      "category":  "Business Tool",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/report-form",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-05T02:17:07Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_trIqbwqZlgccAuTiHEjECGVDMttE"
                  },
                  {
                      "name":  "staff-reporting-system",
@@ -227,7 +281,10 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/staff-reporting-system",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  "https://openclawsean024-create.github.io/staff-reporting-system/"
+                     "githubUpdatedAt":  "2026-03-09T07:37:25Z",
+                     "pagesUrl":  "https://openclawsean024-create.github.io/staff-reporting-system/",
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_vHQMp6JgrP9cge2op6DSo50bUQH2"
                  },
                  {
                      "name":  "sui-blog",
@@ -239,31 +296,40 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/sui-blog",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T14:47:33Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "text-to-speech-mvp",
                      "status":  "active",
                      "category":  "Media Tool",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/text-to-speech-mvp",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T11:17:51Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_tI2ZfB63g12CizXPKY3hd596GYFC"
                  },
                  {
                      "name":  "trade-backtest",
                      "status":  "active",
                      "category":  "Project",
                      "github":  true,
-                     "deploy":  false,
+                     "deploy":  true,
                      "note":  "本地專案 + GitHub 已比對",
                      "githubUrl":  "https://github.com/openclawsean024-create/trade-backtest",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-01T18:54:53Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  true,
+                     "vercelProjectId":  "prj_xwsKMnQVJ8oEufLGo9GuJUbVxVEs"
                  },
                  {
                      "name":  "trend-to-video-studio",
@@ -275,7 +341,10 @@
                      "githubUrl":  null,
                      "stars":  0,
                      "visibility":  null,
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  null,
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  },
                  {
                      "name":  "youtube-trending-collector",
@@ -287,7 +356,10 @@
                      "githubUrl":  "https://github.com/openclawsean024-create/youtube-trending-collector",
                      "stars":  0,
                      "visibility":  "public",
-                     "pagesUrl":  null
+                     "githubUpdatedAt":  "2026-03-03T14:58:26Z",
+                     "pagesUrl":  null,
+                     "vercelLinked":  false,
+                     "vercelProjectId":  null
                  }
              ],
     "summary":  {
@@ -295,6 +367,6 @@
                     "active":  21,
                     "live":  3,
                     "github":  20,
-                    "deploy":  3
+                    "deploy":  15
                 }
 }

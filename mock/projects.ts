@@ -22,6 +22,12 @@ type PagesInfo = {
   pages: string | null;
 };
 
+type VercelInfo = {
+  linked: boolean;
+  projectId: string | null;
+  orgId: string | null;
+};
+
 function inferCategory(name: string) {
   const n = name.toLowerCase();
   if (n.includes('dashboard')) return 'Dashboard';
@@ -43,7 +49,7 @@ function inferStatus(name: string) {
 
 function loadRepos(): RepoInfo[] {
   try {
-    const raw = execSync(`& \"${GH_BIN}\" repo list ${GH_OWNER} --limit 100 --json name,nameWithOwner,stargazerCount,url,visibility,updatedAt`, {
+    const raw = execSync(`& "${GH_BIN}" repo list ${GH_OWNER} --limit 100 --json name,nameWithOwner,stargazerCount,url,visibility,updatedAt`, {
       shell: 'powershell.exe',
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'ignore'],
@@ -61,7 +67,7 @@ function loadPages(): PagesInfo[] {
 
   return repoNames.map((name) => {
     try {
-      const raw = execSync(`& \"${GH_BIN}\" api repos/${GH_OWNER}/${name}/pages`, {
+      const raw = execSync(`& "${GH_BIN}" api repos/${GH_OWNER}/${name}/pages`, {
         shell: 'powershell.exe',
         encoding: 'utf8',
         stdio: ['ignore', 'pipe', 'ignore'],
@@ -72,6 +78,23 @@ function loadPages(): PagesInfo[] {
       return { name, pages: null };
     }
   });
+}
+
+function loadVercelInfo(projectName: string): VercelInfo {
+  try {
+    const projectJson = path.join(PROJECTS_DIR, projectName, '.vercel', 'project.json');
+    if (!fs.existsSync(projectJson)) {
+      return { linked: false, projectId: null, orgId: null };
+    }
+    const parsed = JSON.parse(fs.readFileSync(projectJson, 'utf8'));
+    return {
+      linked: true,
+      projectId: parsed.projectId ?? null,
+      orgId: parsed.orgId ?? null,
+    };
+  } catch {
+    return { linked: false, projectId: null, orgId: null };
+  }
 }
 
 function getProjects() {
@@ -90,17 +113,21 @@ function getProjects() {
     .map((name) => {
       const repo = repoMap.get(name);
       const pageUrl = pagesMap.get(name) ?? null;
+      const vercel = loadVercelInfo(name);
       return {
         name,
         status: inferStatus(name),
         category: inferCategory(name),
         github: !!repo,
-        deploy: !!pageUrl,
+        deploy: !!pageUrl || vercel.linked,
         note: repo ? '本地專案 + GitHub 已比對' : '從本地 projects 目錄即時讀取',
         githubUrl: repo?.url ?? null,
         stars: repo?.stargazerCount ?? 0,
         visibility: repo?.visibility?.toLowerCase() ?? null,
+        githubUpdatedAt: repo?.updatedAt ?? null,
         pagesUrl: pageUrl,
+        vercelLinked: vercel.linked,
+        vercelProjectId: vercel.projectId,
       };
     });
 }

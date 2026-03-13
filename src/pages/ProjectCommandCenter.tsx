@@ -1,4 +1,6 @@
 import {
+  ClockCircleOutlined,
+  CloudOutlined,
   GithubOutlined,
   LinkOutlined,
   ReloadOutlined,
@@ -34,6 +36,9 @@ type ProjectItem = {
   pagesUrl?: string | null;
   stars?: number;
   visibility?: string | null;
+  githubUpdatedAt?: string | null;
+  vercelLinked?: boolean;
+  vercelProjectId?: string | null;
 };
 
 type Summary = {
@@ -78,6 +83,15 @@ async function getJson<T>(url: string): Promise<T> {
     throw new Error(`Request failed: ${url} (${res.status})`);
   }
   return res.json();
+}
+
+function formatDate(value?: string | null) {
+  if (!value) return '-';
+  try {
+    return new Date(value).toLocaleString('zh-TW', { hour12: false });
+  } catch {
+    return value;
+  }
 }
 
 const ProjectCommandCenter: React.FC = () => {
@@ -156,7 +170,7 @@ const ProjectCommandCenter: React.FC = () => {
           </ProCard>
           <ProCard colSpan={{ xs: 24, sm: 12, md: 6 }}>
             <StatisticCard
-              statistic={{ title: '已上線', value: summary.live }}
+              statistic={{ title: '已上線 / 已部署', value: summary.deploy }}
               loading={loading}
             />
           </ProCard>
@@ -169,7 +183,7 @@ const ProjectCommandCenter: React.FC = () => {
         </ProCard>
 
         <Row gutter={16}>
-          <Col xs={24} lg={16}>
+          <Col xs={24} lg={17}>
             <Card
               title="專案清單"
               extra={
@@ -211,15 +225,9 @@ const ProjectCommandCenter: React.FC = () => {
                     ),
                   },
                   {
-                    title: '類型',
-                    dataIndex: 'category',
-                    width: 120,
-                    render: (value: string) => <Tag>{value}</Tag>,
-                  },
-                  {
                     title: 'GitHub',
                     dataIndex: 'githubUrl',
-                    width: 160,
+                    width: 170,
                     render: (_, record: ProjectItem) =>
                       record.githubUrl ? (
                         <Space>
@@ -254,54 +262,78 @@ const ProjectCommandCenter: React.FC = () => {
                     ),
                   },
                   {
-                    title: 'Pages',
-                    dataIndex: 'pagesUrl',
-                    width: 100,
-                    render: (value: string | null) =>
-                      value ? (
-                        <a href={value} target="_blank" rel="noreferrer">
-                          Open
-                        </a>
-                      ) : (
-                        <Tag>None</Tag>
-                      ),
+                    title: '最近更新',
+                    dataIndex: 'githubUpdatedAt',
+                    width: 170,
+                    render: (value: string | null) => (
+                      <Space size={4}>
+                        <ClockCircleOutlined />
+                        <span>{formatDate(value)}</span>
+                      </Space>
+                    ),
+                  },
+                  {
+                    title: '部署',
+                    width: 140,
+                    render: (_, record: ProjectItem) => (
+                      <Space wrap>
+                        {record.pagesUrl ? (
+                          <a
+                            href={record.pagesUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Pages
+                          </a>
+                        ) : null}
+                        {record.vercelLinked ? (
+                          <Tag color="cyan">Vercel</Tag>
+                        ) : null}
+                        {!record.pagesUrl && !record.vercelLinked ? (
+                          <Tag>None</Tag>
+                        ) : null}
+                      </Space>
+                    ),
                   },
                 ]}
               />
             </Card>
           </Col>
-          <Col xs={24} lg={8}>
+          <Col xs={24} lg={7}>
             <Space direction="vertical" size={16} style={{ width: '100%' }}>
+              <Card title="部署資訊">
+                <Space direction="vertical" style={{ width: '100%' }}>
+                  <Typography.Text>
+                    <GithubOutlined /> GitHub repo 已串接
+                  </Typography.Text>
+                  <Typography.Text>
+                    <LinkOutlined /> GitHub Pages 已顯示
+                  </Typography.Text>
+                  <Typography.Text>
+                    <CloudOutlined /> Vercel 綁定狀態已讀取
+                  </Typography.Text>
+                </Space>
+              </Card>
               <Card title="下一步">
                 <ul style={{ paddingLeft: 18, marginBottom: 0 }}>
-                  <li>串 Vercel / 部署網址</li>
+                  <li>補上 Vercel 真實網址</li>
                   <li>加入專案狀態編輯與備註</li>
                   <li>補上專案詳情頁</li>
-                  <li>加入 GitHub 最近更新時間</li>
+                  <li>加入 owner / priority 欄位</li>
                 </ul>
-              </Card>
-              <Card title="快捷入口">
-                <Space direction="vertical" style={{ width: '100%' }}>
-                  <Button block icon={<GithubOutlined />}>
-                    GitHub Repos
-                  </Button>
-                  <Button block icon={<LinkOutlined />}>
-                    Deploy Links
-                  </Button>
-                  <Button block>Project Health Check</Button>
-                </Space>
               </Card>
               <Card title="目前重點">
                 <Typography.Paragraph style={{ marginBottom: 8 }}>
                   現在這版已經同時顯示：
                   <Typography.Text code>
-                    本地專案 + GitHub Repo + Pages + Stars
+                    本地專案 + GitHub Repo + Stars + 最近更新 + Pages + Vercel
+                    綁定
                   </Typography.Text>
                   。
                 </Typography.Paragraph>
                 <Typography.Paragraph style={{ marginBottom: 0 }}>
-                  下一步把 Vercel、備註與狀態管理接進來，這個 Dashboard
-                  就會更接近完整的專案營運面板。
+                  下一步把 Vercel
+                  真實網址與備註系統接進來，就會更像完整的專案營運面板。
                 </Typography.Paragraph>
               </Card>
             </Space>
