@@ -29,6 +29,12 @@ export default [
     component: './Welcome',
   },
   {
+    path: '/projects',
+    name: 'projects',
+    icon: 'dashboard',
+    component: './ProjectCommandCenter',
+  },
+  {
     path: '/admin',
     name: 'admin',
     icon: 'crown',
@@ -53,7 +59,7 @@ export default [
   },
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/projects',
   },
   {
     component: '404',

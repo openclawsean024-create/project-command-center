@@ -168,7 +168,8 @@ export default defineConfig({
   mock: {
     include: ['mock/**/*', 'src/pages/**/_mock.ts'],
   },
-  utoopack: {},
+  // Disable utoopack on this Windows environment; use default bundler instead.
+  utoopack: false,
   requestRecord: {},
   exportStatic: {},
   define: {
