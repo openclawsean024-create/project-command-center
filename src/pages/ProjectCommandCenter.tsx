@@ -76,13 +76,23 @@ const ProjectCommandCenter: React.FC = () => {
   const loadProjects = async () => {
     setLoading(true);
     try {
-      const res = await request<{
+      let res: {
         success: boolean;
         data: ProjectItem[];
         summary: Summary;
-      }>('/api/projects');
-      setProjects(res.data || []);
-      setSummary(res.summary || emptySummary);
+      } | null = null;
+      try {
+        res = await request('/api/projects');
+      } catch {
+        const base = window.location.pathname.startsWith(
+          '/project-command-center',
+        )
+          ? '/project-command-center/'
+          : '/';
+        res = await request(`${base}projects.json`);
+      }
+      setProjects(res?.data || []);
+      setSummary(res?.summary || emptySummary);
     } finally {
       setLoading(false);
     }
