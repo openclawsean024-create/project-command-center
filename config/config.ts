@@ -24,6 +24,7 @@ export default defineConfig({
   hash: true,
 
   publicPath: PUBLIC_PATH,
+  base: PUBLIC_PATH,
 
   /**
    * @name ?澆捆?扯挽蝵?   * @description 霈曄蔭 ie11 銝?摰?蝢摰對??閬??亥撌曹蝙?函????韏?   * @doc https://umijs.org/docs/api/config#targets
