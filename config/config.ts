@@ -1,4 +1,4 @@
-// https://umijs.org/config/
+﻿// https://umijs.org/config/
 
 import { join } from 'node:path';
 import { defineConfig } from '@umijs/max';
@@ -10,77 +10,67 @@ import routes from './routes';
 const { UMI_ENV = 'dev' } = process.env;
 
 /**
- * @name 使用公共路径
- * @description 部署时的路径，如果部署在非根目录下，需要配置这个变量
- * @doc https://umijs.org/docs/api/config#publicpath
+ * @name 雿輻?砍頝臬?
+ * @description ?函蔡?嗥?頝臬?嚗??蝵脣??桀?銝??閬?蝵株?銝芸??? * @doc https://umijs.org/docs/api/config#publicpath
  */
-const PUBLIC_PATH: string = '/';
+const PUBLIC_PATH: string =
+  process.env.PUBLIC_PATH || '/project-command-center/';
 
 export default defineConfig({
   /**
-   * @name 开启 hash 模式
-   * @description 让 build 之后的产物包含 hash 后缀。通常用于增量发布和避免浏览器加载缓存。
-   * @doc https://umijs.org/docs/api/config#hash
+   * @name 撘??hash 璅∪?
+   * @description 霈?build 銋??漣?拙???hash ???虜?其?憓??????閫?蝸蝻???   * @doc https://umijs.org/docs/api/config#hash
    */
   hash: true,
 
   publicPath: PUBLIC_PATH,
 
   /**
-   * @name 兼容性设置
-   * @description 设置 ie11 不一定完美兼容，需要检查自己使用的所有依赖
-   * @doc https://umijs.org/docs/api/config#targets
+   * @name ?澆捆?扯挽蝵?   * @description 霈曄蔭 ie11 銝?摰?蝢摰對??閬??亥撌曹蝙?函????韏?   * @doc https://umijs.org/docs/api/config#targets
    */
   // targets: {
   //   ie: 11,
   // },
   /**
-   * @name 路由的配置，不在路由中引入的文件不会编译
-   * @description 只支持 path，component，routes，redirect，wrappers，title 的配置
-   * @doc https://umijs.org/docs/guides/routes
+   * @name 頝舐??蝵殷?銝頝舐銝剖??亦??辣銝?蝻?
+   * @description ?芣??path嚗omponent嚗outes嚗edirect嚗rappers嚗itle ??蝵?   * @doc https://umijs.org/docs/guides/routes
    */
   // umi routes: https://umijs.org/docs/routing
   routes,
   /**
-   * @name 主题的配置
-   * @description 虽然叫主题，但是其实只是 less 的变量设置
-   * @doc antd的主题设置 https://ant.design/docs/react/customize-theme-cn
-   * @doc umi 的 theme 配置 https://umijs.org/docs/api/config#theme
+   * @name 銝駁???蝵?   * @description ?賜?思蜓憸?雿?嗅??芣 less ???挽蝵?   * @doc antd?蜓憸挽蝵?https://ant.design/docs/react/customize-theme-cn
+   * @doc umi ??theme ?蔭 https://umijs.org/docs/api/config#theme
    */
   // theme: { '@primary-color': '#1DA57A' }
   /**
-   * @name moment 的国际化配置
-   * @description 如果对国际化没有要求，打开之后能减少js的包大小
+   * @name moment ????蔭
+   * @description 憒?撖孵??瘝⊥?閬?嚗?撘銋??賢?撠s??憭批?
    * @doc https://umijs.org/docs/api/config#ignoremomentlocale
    */
   ignoreMomentLocale: true,
   /**
-   * @name 代理配置
-   * @description 可以让你的本地服务器代理到你的服务器上，这样你就可以访问服务器的数据了
-   * @see 要注意以下 代理只能在本地开发时使用，build 之后就无法使用了。
-   * @doc 代理介绍 https://umijs.org/docs/guides/proxy
-   * @doc 代理配置 https://umijs.org/docs/api/config#proxy
+   * @name 隞???蔭
+   * @description ?臭誑霈拐???唳??∪隞???唬????∪銝?餈雿停?臭誑霈輸??函??唳鈭?   * @see 閬釣?誑銝?隞???芾?冽?啣??雿輻嚗uild 銋?撠望?瘜蝙?其???   * @doc 隞??隞? https://umijs.org/docs/guides/proxy
+   * @doc 隞???蔭 https://umijs.org/docs/api/config#proxy
    */
   proxy: proxy[UMI_ENV as keyof typeof proxy],
   /**
-   * @name 快速热更新配置
-   * @description 一个不错的热更新组件，更新时可以保留 state
+   * @name 敹恍?湔?蔭
+   * @description 銝銝芯????剜?啁?隞塚??湔?嗅隞乩???state
    */
   fastRefresh: true,
-  //============== 以下都是max的插件配置 ===============
+  //============== 隞乩??賣max??隞園?蝵?===============
   /**
-   * @name 数据流插件
-   * @@doc https://umijs.org/docs/max/data-flow
+   * @name ?唳瘚?隞?   * @@doc https://umijs.org/docs/max/data-flow
    */
   model: {},
   /**
-   * 一个全局的初始数据流，可以用它在插件之间共享数据
-   * @description 可以用来存放一些全局的数据，比如用户信息，或者一些全局的状态，全局初始状态在整个 Umi 项目的最开始创建。
-   * @doc https://umijs.org/docs/max/data-flow#%E5%85%A8%E5%B1%80%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81
+   * 銝銝芸撅??憪?格?嚗隞亦摰?辣銋?曹澈?唳
+   * @description ?臭誑?冽摮銝鈭撅??殷?瘥??冽靽⊥嚗???鈭撅????典????嗆?港葵 Umi 憿寧??撘憪?撱箝?   * @doc https://umijs.org/docs/max/data-flow#%E5%85%A8%E5%B1%80%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81
    */
   initialState: {},
   /**
-   * @name layout 插件
+   * @name layout ?辣
    * @doc https://umijs.org/docs/max/layout-menu
    */
   title: 'Ant Design Pro',
@@ -89,8 +79,8 @@ export default defineConfig({
     ...defaultSettings,
   },
   /**
-   * @name moment2dayjs 插件
-   * @description 将项目中的 moment 替换为 dayjs
+   * @name moment2dayjs ?辣
+   * @description 撠★?桐葉??moment ?踵銝?dayjs
    * @doc https://umijs.org/docs/max/moment2dayjs
    */
   moment2dayjs: {
@@ -98,8 +88,7 @@ export default defineConfig({
     plugins: ['duration'],
   },
   /**
-   * @name 国际化插件
-   * @doc https://umijs.org/docs/max/i18n
+   * @name ?賡???隞?   * @doc https://umijs.org/docs/max/i18n
    */
   locale: {
     // default zh-CN
@@ -109,8 +98,8 @@ export default defineConfig({
     baseNavigator: true,
   },
   /**
-   * @name antd 插件
-   * @description 内置了 babel import 插件
+   * @name antd ?辣
+   * @description ?蔭鈭?babel import ?辣
    * @doc https://umijs.org/docs/max/antd#antd
    */
   antd: {
@@ -124,36 +113,34 @@ export default defineConfig({
     },
   },
   /**
-   * @name 网络请求配置
-   * @description 它基于 axios 和 ahooks 的 useRequest 提供了一套统一的网络请求和错误处理方案。
-   * @doc https://umijs.org/docs/max/request
+   * @name 蝵?霂瑟??蔭
+   * @description 摰鈭?axios ??ahooks ??useRequest ??鈭?憟?銝??蝏窈瘙??秤憭??寞???   * @doc https://umijs.org/docs/max/request
    */
   request: {},
   /**
-   * @name 权限插件
-   * @description 基于 initialState 的权限插件，必须先打开 initialState
+   * @name ???辣
+   * @description ?箔? initialState ????隞塚?敹◆??撘 initialState
    * @doc https://umijs.org/docs/max/access
    */
   access: {},
   /**
-   * @name <head> 中额外的 script
-   * @description 配置 <head> 中额外的 script
+   * @name <head> 銝剝?憭? script
+   * @description ?蔭 <head> 銝剝?憭? script
    */
   headScripts: [
-    // 解决首次加载时白屏的问题
+    // 閫?擐活?蝸?嗥撅??桅?
     { src: join(PUBLIC_PATH, 'scripts/loading.js'), async: true },
   ],
-  //================ pro 插件配置 =================
+  //================ pro ?辣?蔭 =================
   presets: ['umi-presets-pro'],
   /**
-   * @name openAPI 插件的配置
-   * @description 基于 openapi 的规范生成serve 和mock，能减少很多样板代码
+   * @name openAPI ?辣??蝵?   * @description ?箔? openapi ?????erve ?ock嚗??敺??瑟隞??
    * @doc https://pro.ant.design/zh-cn/docs/openapi/
    */
   openAPI: [
     {
       requestLibPath: "import { request } from '@umijs/max'",
-      // 或者使用在线的版本
+      // ?蝙?典蝥輻??
       // schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json"
       schemaPath: join(__dirname, 'oneapi.json'),
       mock: false,
